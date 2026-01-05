@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VPN Premium Indonesia & Singapore</title>
-
     <style>
         * {
             margin: 0;
@@ -16,6 +15,7 @@
         body {
             background: #f5f7fa;
             color: #333;
+            transition: background-color 0.5s ease;
         }
 
         header {
@@ -23,11 +23,13 @@
             color: #fff;
             padding: 60px 20px;
             text-align: center;
+            transition: background 0.5s ease;
         }
 
         header h1 {
             font-size: 2.2rem;
             margin-bottom: 10px;
+            color: #ffd700;
         }
 
         header p {
@@ -52,22 +54,32 @@
             border-radius: 12px;
             padding: 25px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
         .card h2 {
             margin-bottom: 10px;
+            color: #1e3c72;
         }
 
         .price {
             font-size: 1.5rem;
-            color: #2a5298;
+            color: #ffd700;
             margin: 15px 0;
             font-weight: bold;
+            text-decoration: line-through;
+        }
+
+        .discount-price {
+            font-size: 1.8rem;
+            color: #25D366;
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         .card ul {
@@ -88,11 +100,27 @@
             border-radius: 30px;
             font-weight: bold;
             text-align: center;
-            transition: background 0.3s;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .btn:hover {
             background: #1ebe5d;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .payment-section {
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .payment-section:hover {
+            opacity: 1;
         }
 
         footer {
@@ -100,6 +128,17 @@
             padding: 20px;
             font-size: 0.9rem;
             color: #777;
+            background: #f1f1f1;
+        }
+
+        /* Animation for background change */
+        body.dark-mode {
+            background: #333;
+            color: #fff;
+        }
+
+        header.dark-mode {
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
         }
     </style>
 </head>
@@ -112,31 +151,60 @@
 
 <div class="container">
     <div class="cards">
-
+        <!-- Card Produk VPN 1 Device -->
         <div class="card">
-            <h2>🇮🇩 VPN Indonesia</h2>
+            <h2>🇮🇩🇸🇬 VPN Server ID & SG 1 Device</h2>
             <div class="price">Rp 10.000</div>
+            <div class="discount-price">Rp 8.000</div>
             <ul>
-                <li>✔ Server Indonesia</li>
+                <li>✔ Server Indonesia & Singapore</li>
                 <li>✔ Koneksi Stabil</li>
-                <li>✔ Support Streaming</li>
-                <li>✔ Full Speed</li>
+                <li>✔ Support Enhanced & Wildcard</li>
+                <li>✔ 1 Device Only</li>
             </ul>
-            <a class="btn" href="#" onclick="order('VPN Indonesia')">Order via WhatsApp</a>
+            <a class="btn" href="#" onclick="order('VPN Server ID & SG 1 Device')">Order via WhatsApp</a>
         </div>
 
+        <!-- Card Produk VPN 2 Devices -->
         <div class="card">
-            <h2>🇸🇬 VPN Singapore</h2>
-            <div class="price">Rp 15.000</div>
+            <h2>🇮🇩🇸🇬 VPN Server ID & SG 2 Devices</h2>
+            <div class="price">Rp 16.000</div>
+            <div class="discount-price">Rp 13.000</div>
             <ul>
-                <li>✔ Server Singapore</li>
-                <li>✔ Low Latency</li>
-                <li>✔ Gaming & Streaming</li>
-                <li>✔ Premium Speed</li>
+                <li>✔ Server Indonesia & Singapore</li>
+                <li>✔ Koneksi Stabil</li>
+                <li>✔ Support Enhanced & Wildcard</li>
+                <li>✔ 2 Devices Allowed</li>
             </ul>
-            <a class="btn" href="#" onclick="order('VPN Singapore')">Order via WhatsApp</a>
+            <a class="btn" href="#" onclick="order('VPN Server ID & SG 2 Devices')">Order via WhatsApp</a>
         </div>
 
+        <!-- Card Produk ZIVPN (Harga Coret) -->
+        <div class="card">
+            <h2>🌐 Akun UDP ZIVPN</h2>
+            <div class="price">Rp 15.000</div>
+            <div class="discount-price">Rp 10.000</div>
+            <ul>
+                <li>✔ Akses UDP ZIVPN</li>
+                <li>✔ Koneksi Stabil & Cepat</li>
+            </ul>
+            <a class="btn" href="#" onclick="order('Akun UDP ZIVPN')">Order via WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- QRIS Payment Section -->
+    <div class="payment-section">
+        <h3>Pembayaran via QRIS</h3>
+        <img src="https://raw.githubusercontent.com/username/landing-vpn/main/qris.png" alt="QRIS Payment" style="max-width: 200px; border-radius: 10px;">
+        <p>Scan QRIS untuk pembayaran.</p>
+    </div>
+
+    <!-- DANA Payment Section -->
+    <div class="payment-section">
+        <h3>Pembayaran via DANA</h3>
+        <p>Transfer ke nomor DANA:</p>
+        <p><strong>0821-1598-2542</strong> A/n Wawan Hermawan</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Logo_DANA_Indonesia.svg/1024px-Logo_DANA_Indonesia.svg.png" alt="DANA Payment" style="max-width: 100px; margin-top: 10px;">
     </div>
 </div>
 
@@ -146,11 +214,17 @@
 
 <script>
     function order(product) {
-        const phone = "6285171661994"; // GANTI dengan nomor WA kamu
+        const phone = "6285171661994"; // Nomor WA yang baru
         const message = `Halo admin, saya ingin order ${product}. Apakah masih tersedia?`;
         const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     }
+
+    // JavaScript untuk toggle dark mode
+    setTimeout(() => {
+        document.body.classList.toggle("dark-mode");
+        document.querySelector('header').classList.toggle("dark-mode");
+    }, 1000);
 </script>
 
 </body>
